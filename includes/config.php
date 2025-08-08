@@ -3,7 +3,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'bouesti_housing');
+define('DB_NAME', 'bouesti_accomd');
 
 // Application Configuration
 define('SITE_NAME', 'BOUESTI Off-Campus Accommodation');

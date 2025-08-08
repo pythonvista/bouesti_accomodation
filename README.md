@@ -33,7 +33,34 @@ A minimalistic web platform where verified landlords can register properties and
 - Apache/Nginx web server
 - XAMPP (recommended for local development)
 
-### Step 1: Clone/Download the Project
+### Quick Setup (Recommended)
+
+The easiest way to set up the system is using our automated setup scripts:
+
+#### Option 1: Web-Based Setup
+1. Upload all files to your web server
+2. Open `http://your-domain.com/setup.php` in your browser
+3. Follow the 4-step setup wizard:
+   - Database configuration
+   - Database schema creation
+   - Admin password setup
+   - Final configuration
+4. Delete the setup file after completion
+
+#### Option 2: Command-Line Setup
+```bash
+# Upload files to server
+# Run the CLI setup script
+php setup_cli.php --db-host=localhost --db-name=bouesti_housing --db-user=root --admin-pass=yourpassword
+```
+
+For detailed setup instructions, see [SETUP.md](SETUP.md).
+
+### Manual Installation
+
+If you prefer manual setup:
+
+#### Step 1: Clone/Download the Project
 ```bash
 # If using git
 git clone <repository-url>
@@ -42,7 +69,7 @@ cd accomodation
 # Or download and extract the ZIP file
 ```
 
-### Step 2: Set Up Database
+#### Step 2: Set Up Database
 1. Open your MySQL client (phpMyAdmin, MySQL Workbench, or command line)
 2. Create a new database or use the provided SQL script:
    ```sql
@@ -56,7 +83,7 @@ cd accomodation
 
 3. Import the database structure from `database_setup.sql`
 
-### Step 3: Configure Database Connection
+#### Step 3: Configure Database Connection
 1. Open `includes/config.php`
 2. Update the database credentials:
    ```php
@@ -66,7 +93,7 @@ cd accomodation
    define('DB_NAME', 'bouesti_housing');
    ```
 
-### Step 4: Set Up File Permissions
+#### Step 4: Set Up File Permissions
 1. Create the uploads directory:
    ```bash
    mkdir uploads
@@ -79,12 +106,12 @@ cd accomodation
    chmod 755 uploads/properties
    ```
 
-### Step 5: Configure Web Server
+#### Step 5: Configure Web Server
 1. **For XAMPP**: Place the project in `htdocs` folder
 2. **For Apache**: Configure virtual host or place in web root
 3. **For Nginx**: Configure server block
 
-### Step 6: Access the Application
+#### Step 6: Access the Application
 1. Start your web server and MySQL
 2. Open your browser and navigate to:
    ```
@@ -94,12 +121,14 @@ cd accomodation
 ## Default Login Credentials
 
 ### Admin Account
-- **Email**: admin@bouesti.edu.ng
-- **Password**: admin123
+- **Email**: admin@bouesti.edu.ng (or as set during setup)
+- **Password**: [Set during setup process]
 
 ### Sample Accounts (for testing)
-- **Landlord**: landlord@example.com / admin123
-- **Student**: student@example.com / admin123
+- **Landlord**: landlord@example.com / password123
+- **Student**: student@example.com / password123
+
+**Note**: These are test accounts created during setup. Change passwords in production.
 
 ## Project Structure
 
@@ -263,6 +292,7 @@ This project is developed for BOUESTI (Bamidele Olumilua University of Education
 ---
 
 **Note**: This is a minimal build focusing on core functionality. Future enhancements may include booking systems, payment integration, advanced search, and mobile applications.
-#   b o u e s t i _ a c c o m o d a t i o n  
+#   b o u e s t i _ a c c o m o d a t i o n 
+ 
  # bouesti_accomodation
 # bouesti_accomodation
