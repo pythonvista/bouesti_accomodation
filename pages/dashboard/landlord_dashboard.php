@@ -16,12 +16,12 @@ $properties = getLandlordProperties($user_id);
 $inquiries = getInquiriesByLandlord($user_id);
 
 // Count properties by status
-$total_properties = count($properties);
+$total_properties = mysqli_num_rows($properties);
 $approved_properties = 0;
 $pending_properties = 0;
 $rejected_properties = 0;
 
-foreach ($properties as $property) {
+while ($property = mysqli_fetch_assoc($properties)) {
     if ($property['is_approved'] == 1) {
         $approved_properties++;
     } elseif ($property['is_approved'] == 0) {
@@ -125,7 +125,7 @@ foreach ($properties as $property) {
                     </div>
                     <div class="ml-4">
                         <p class="text-sm font-medium text-gray-500">Inquiries</p>
-                        <p class="text-2xl font-semibold text-gray-900"><?php echo count($inquiries); ?></p>
+                        <p class="text-2xl font-semibold text-gray-900"><?php echo mysqli_num_rows($inquiries); ?></p>
                     </div>
                 </div>
             </div>
@@ -218,7 +218,7 @@ foreach ($properties as $property) {
                     <p class="text-gray-600 mt-1">Student inquiries about your properties</p>
                 </div>
                 <div class="p-6">
-                    <?php if (empty($inquiries)): ?>
+                    <?php if (mysqli_num_rows($inquiries) == 0): ?>
                         <div class="text-center py-8">
                             <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
