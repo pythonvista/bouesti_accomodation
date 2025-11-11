@@ -1,9 +1,9 @@
 <?php
 // Database Configuration
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'bouesti_housing');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_HOST', 'db.pxxl.pro:8737');
+define('DB_NAME', 'db_17d7bd42');
+define('DB_USER', 'user_7d093580');
+define('DB_PASS', '711231170dc09fafb08a7c0b92914e44');
 
 // Application Configuration
 define('SITE_NAME', 'BOUESTI Off-Campus Accommodation System');

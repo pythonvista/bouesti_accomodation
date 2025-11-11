@@ -2,8 +2,8 @@
 -- Run this script to create the database and all required tables
 
 -- Create database
-CREATE DATABASE IF NOT EXISTS bouesti_housing;
-USE bouesti_housing;
+CREATE DATABASE IF NOT EXISTS db_17d7bd42;
+USE db_17d7bd42;
 
 -- Users table
 CREATE TABLE users (
